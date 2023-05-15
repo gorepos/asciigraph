@@ -14,6 +14,7 @@ type config struct {
 	Width, Height int
 	Offset        int
 	Caption       string
+	UnitPostfix   string
 	Precision     uint
 	CaptionColor  AnsiColor
 	AxisColor     AnsiColor
@@ -81,6 +82,11 @@ func CaptionColor(ac AnsiColor) Option {
 	return optionFunc(func(c *config) {
 		c.CaptionColor = ac
 	})
+}
+
+// UnitPostfix sets the unit postfix
+func UnitPostfix(postfix string) Option {
+	return optionFunc(func(c *config) { c.UnitPostfix = postfix })
 }
 
 // AxisColor sets the axis color.

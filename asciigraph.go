@@ -124,7 +124,7 @@ func PlotMany(data [][]float64, options ...Option) string {
 			magnitude = float64(y)
 		}
 
-		label := fmt.Sprintf("%*.*f", maxWidth+1, precision, magnitude)
+		label := fmt.Sprintf("%*.*f%s", maxWidth+1, precision, magnitude, config.UnitPostfix)
 		w := y - intmin2
 		h := int(math.Max(float64(config.Offset)-float64(len(label)), 0))
 
